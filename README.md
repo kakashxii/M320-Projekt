@@ -5,6 +5,7 @@ In this project we have the free choice of what to do. We can do this project in
 **Requirements:**
 - OOP 
 - Build in interfaces
+- Console application
 
 *Further requirements follow.*
 
