@@ -9,7 +9,7 @@ In this project we have the free choice of what to do. We can do this project in
 *Further requirements follow.*
 
 **idea:**
-We would like to make a school management system to manage the data of a fictitious school. The user can search, delete or also update students or teachers. We have used an example from this site [link to the example](https://www.geeksforgeeks.org/student-management-system-in-python/) as a guide.
+We would like to make a school management system to manage the data of a fictitious school. The user can search, delete or also update students or teachers. We have used an example from this site ([link to the example](https://www.geeksforgeeks.org/student-management-system-in-python/))as a guide.
 
 We decided to make a simple console application that is easy and understandable for any user. Also we introduce a help function that can be helpful in using the app.
 
