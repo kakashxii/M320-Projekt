@@ -1,6 +1,6 @@
 # project description M320
 
-In this project we have the free choice of what to do. We can do this project in one or two groups. We have decided to program a hospital managing system with python. We want to focus on object oriented programming but also apply some machine learning for our data.
+In this project we have the free choice of what to do. We can do this project in one or two groups. We have decided to program a school management system with python. We want to focus on object oriented programming but also apply some machine learning for our data.
 
 **Requirements:**
 - OOP 
@@ -9,9 +9,11 @@ In this project we have the free choice of what to do. We can do this project in
 *Further requirements follow.*
 
 **idea:**
-We want to make a hospital managing system to help track health data or make it easier for users to do their job better. We got some inspiration from the internet and came up with this idea. But of course we want to make it better than the examples you can find on the internet.
+We would like to make a school management system to manage the data of a fictitious school. The user can search, delete or also update students or teachers. We have used an example from this site [link to the example](https://www.geeksforgeeks.org/student-management-system-in-python/) as a guide.
 
-We want to include many useful features and also design a nice user friendly GUI.
+We decided to make a simple console application that is easy and understandable for any user. Also we introduce a help function that can be helpful in using the app.
+
+Of course, our goal is not to copy this code, it is just for inspiration and as a small support in the project. Additionally we would like to add a class for unittests if there is time.
 
 
 **in addition:**
