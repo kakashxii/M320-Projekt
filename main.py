@@ -1,69 +1,129 @@
-
-#create class Person
+# Parent class person
 class Person:
-    #constructor
     def __init__(self, name, birthdate):
         self.name = name
         self.birthdate = birthdate
 
-#create class Teacher
+# Child class teacher inherits from person
+
+
 class Teacher(Person):
-    #constructor
-    def __init__(self, name, birthdate, id,):
+    def __init__(self, name, birthdate, id_):
         super().__init__(name, birthdate)
-        self.id = id
+        self.id = id_
+    # Function to add a new teacher
 
-    #function to create and add new teacher
-  
-    def accept(self, Name, Birthdate, Id):
-        #use input method to take input from user
-        ob = Teacher(Name, Birthdate, Id)
-        #append object
-        ls.append(ob)
-    
-    #function to display details teacher
-    def display(self, ob):
-        print("Name: ", ob.name)
-        print("Birthdate: ", ob.birthdate)
-        print("Id: ", ob.id)
-        print("\n")
+    def add_teacher(self, name, birthdate, id_):
+        teacher = Teacher(name, birthdate, id_)
+        teachers_list.append(teacher)
+        print(f"{teacher.name} added to the list!")
+    # Function to display teacher details
 
-    #search function
-    def search(self, rn):
-        for i in range(ls.__len__()):
-            if(ls[i].id == rn):
+    def display_teacher(self, teacher):
+        print(
+            f"Name: {teacher.name}\nBirthdate: {teacher.birthdate}\nId: {teacher.id}")
+    # Search a teacher
+
+    def search_teacher(self, id_):
+        for i in teachers_list:
+            if i.id == id_:
                 return i
+        print(f"Teacher with id {id_} not found.")
+    # Delete a teacher
 
-    #delete function
-    def delete(self, rn):
-        i = obj.search(rn)
-        del ls[i]
-    
-    # Update Function
-    def update(self, rn, No):
-        i = obj.search(rn)
-        number = No
-        ls[i].id = number
+    def delete_teacher(self, id_):
+        teacher = self.search_teacher(id_)
+        if teacher:
+            teachers_list.remove(teacher)
+            print(f"{teacher.name} deleted.")
+        else:
+            print("Teacher not found.")
+    # Update a teacher
 
-#create list with all teachers
-ls = []
-
-#create object teacher
-obj = Teacher('', 0, 0, 0)
-
-print("\nOperation used, ")
-print("\n1.Accept Teacher details\n2.Display Teacher Details\n3.Search Details of a Teacher\n4.Delete Details of Student\n5.Update Teacher Details\n6.Exit")
-
-obj.accept("A", 1, 100, 100)
-obj.accept("B", 2, 90, 90)
-obj.accept("C", 3, 80, 80)
+    def update_teacher(self, id_, name, birthdate):
+        teacher = self.search_teacher(id_)
+        if teacher:
+            teacher.name = name
+            teacher.birthdate = birthdate
+            print(f"{teacher.name} updated.")
+        else:
+            print("Teacher not found.")
 
 
-print("\n")
-print("\nList of Teachers\n")
-for i in range(ls.__len__()):
-    obj.display(ls[i])
+# list to hold all teachers
+teachers_list = []
+# creating object of teacher
+teacher_obj = Teacher("", "", 0)
 
-print("\n Teacher Found, ")
-s = obj.search(2)
-obj.display(ls[s])
+# function to print menu
+
+
+def print_menu():
+    # Title
+    print("\033[1;32;47m Welcome to the School Management System \033[m\n")
+    #ASCII Art of a School
+    print("____   ____ _   _  ___   ___  _       ____    _  _____  _    ____    _    ____  _____")
+    print("/ ___| / ___| | | |/ _ \ / _ \| |     |  _ \  / \|_   _|/ \  | __ )  / \  / ___|| ____|")
+    print("\___ \| |   | |_| | | | | | | | |     | | | |/ _ \ | | / _ \ |  _ \ / _ \ \___ \|  _|  ")
+    print(" ___) | |___|  _  | |_| | |_| | |___  | |_| / ___ \| |/ ___ \| |_) / ___ \ ___) | |___")
+    print("|____/ \____|_| |_|\___/ \___/|_____| |____/_/   \_\_/_/   \_\____/_/   \_\____/|_____|")
+
+    print("\nPlease choose one of the following options:") #code for color
+    print("\033[1;34;47m 1. Add a new teacher \033[m")
+    print("\033[1;34;47m 2. Display all teachers \033[m")
+    print("\033[1;34;47m 3. Search teacher by id \033[m")
+    print("\033[1;34;47m 4. Delete teacher by id \033[m")
+    print("\033[1;34;47m 5. Update teacher's name and birthdate \033[m")
+    print("\033[1;31;47m 6. Exit \033[m")
+
+
+while True:
+    print_menu()
+    choice = input("Enter choice: ")
+    if choice.isnumeric():
+        choice = int(choice)
+    else:
+        print("Invalid choice, please choose a number from the list.")
+        continue
+    if choice == 1:
+        name = input("Enter teacher name: ")
+        birthdate = input("Enter teacher birthdate (dd/mm/yyyy): ")
+        id_ = input("Enter teacher id: ")
+        if id_.isnumeric():
+            teacher_obj.add_teacher(name, birthdate, int(id_))
+        else:
+            print("Teacher id must be a number")
+        
+    elif choice == 2:
+        if not teachers_list:
+            print("No teachers in the list.")
+            continue
+        print("Teachers list:")
+        for teacher in teachers_list:
+            teacher_obj.display_teacher(teacher)
+    elif choice == 3:
+        id_ = input("Enter teacher id to search: ")
+        if id_.isnumeric():
+            teacher = teacher_obj.search_teacher(int(id_))
+        else:
+            print("Teacher id must be a number.")
+            continue
+    elif choice == 4:
+        id_ = input("Enter teacher id to delete: ")
+        if id_.isnumeric():
+            teacher_obj.delete_teacher(int(id_))
+        else:
+            print("Teacher id must be a number.")
+            continue
+    elif choice == 5:
+        id_ = input("Enter teacher id to update: ")
+        if id_.isnumeric():
+            name = input("Enter new name: ")
+            birthdate = input("Enter new birthdate (dd/mm/yyyy): ")
+            teacher_obj.update_teacher(int(id_), name, birthdate)
+        else:
+            print("Teacher id must be a number.")
+            continue
+    else:
+        print("Goodbye!")
+        break
