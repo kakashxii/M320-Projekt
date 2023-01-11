@@ -6,6 +6,59 @@ class Person:
 
 # Child class teacher inherits from person
 
+class Person:
+    def __init__(self, name, birthdate):
+        self.name = name
+        self.birthdate = birthdate
+
+class Student(Person):
+    def __init__(self, name, birthdate, id_):
+        super().__init__(name, birthdate)
+        self.id = id_
+
+# Function to add a new student
+
+    def add_student(self, name, birthdate, id_):
+        student = Student(name, birthdate, id_) 
+        student_list.append(student)
+        print(f"{student.name} added to the list!")
+    
+    # Function to display student details
+    def display_student(self, student):
+        print(
+            f"Name: {student.name}\nBirthdate: {student.birthdate}\nId: {student.id}")
+
+    # Search a student
+    def search_student(self, id_):
+        for student in student_list:
+            if student.id == id_:
+                return student
+        print(f"Student with id {id_} not found.")
+
+    # Delete a student
+    def delete_student(self, id_):
+        student = self.search_student(id_)
+        if student:
+            student_list.remove(student)
+            print(f"{student.name} deleted.")
+        else:
+            print("Student not found.")
+
+    # Update a student
+    def update_student(self, id_, name, birthdate):
+        student = self.search_student(id_)
+        if student:
+            student.name = name
+            student.birthdate = birthdate
+            print(f"{student.name} updated.")
+        else:
+            print("Student not found.")
+
+# list to hold all students
+student_list = []
+# creating object of student
+student_obj = Student("", "", 0)
+
 
 class Teacher(Person):
     def __init__(self, name, birthdate, id_):
