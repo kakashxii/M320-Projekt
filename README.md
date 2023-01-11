@@ -22,6 +22,6 @@ At the end, if we still have time, we would like to use our data for machine lea
 
 
 
-![Alt text](/ibohighschool.png)
+![Alt text](ibohighschool.png)
 
 
