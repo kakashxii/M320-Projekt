@@ -21,3 +21,7 @@ Of course, our goal is not to copy this code, it is just for inspiration and as 
 At the end, if we still have time, we would like to use our data for machine learning to perform some interesting data analysis.
 
 
+
+![Alt text](Home/Pictures/Screenshots/ibohighschool.png?raw=true "Title")
+
+
