@@ -1,0 +1,12 @@
+Kurze Anleitung für die Ausführung
+-----------------------------------------
+
+1) Installieren Sie Python von dieser Webseite:
+
+	- https://www.python.org/downloads/
+
+2) Öffnen Sie das Terminal (cmd) oder Terminal im Visual Studio Code und geben Sie folgendes ein um zu bestätigen, dass Python installiert ist:
+	- python --version
+
+3) Öfnnen Sie unser Projekt im Visual Studio Code und führen Sie den Code über die Ausführtaste oben rechts aus.
+   Nun sollten Sie in das Menu unseres Programmes kommen.
