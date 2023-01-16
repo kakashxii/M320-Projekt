@@ -1,5 +1,7 @@
 # project description M320
 
+Read Anleitung.txt for environment setup
+
 In this project we have the free choice of what to do. We can do this project in one or two groups. We have decided to program a school management system with python. We want to focus on object oriented programming but also apply some machine learning for our data.
 
 **Requirements:**
